@@ -5,7 +5,7 @@ class AppsController < ApplicationController
   # GET /apps
   # GET /apps.json
   def index
-    @sessionid = session[:user_id]
+    @sessionid = 1
     if @sessionid == nil
        redirect_to root_url    # redirect to login page if user is not logged in
     else    # set up all apps that can be passed to index page with all selected apps
