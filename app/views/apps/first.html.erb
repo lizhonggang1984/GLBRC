@@ -1,0 +1,28 @@
+<!--this is the method when user select or unselect certain app-->
+<!--change the status from true to false, or false to true automatically as server response-->
+<%= stylesheet_link_tag 'first' %>
+<!--add text to remind user and automatically finish set up in our designed form;
+However, User can still choose no change and go back, then form will not be submited
+ in this case status will be the same as before-->
+
+<div class="option">
+  <h2>Click Confirm To Move <%= @app.name %> As First App </h2>
+  <% if @app.order != 1 %>
+
+      <% @apps.each do |a| %>
+        <% if a.id != @app.id %>
+          <% if a.order < @app.order %> <!--only reorder the ones before selected app-->
+            <% a.order = a.order + 1%>
+            <% a.save %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% @app.order = 1 %> <!--reorder selected app to one-->
+      <% @app.save %>
+
+  <% end %>
+</div>
+<div class="sub">
+<%= link_to 'Confirm', '/apps' %>
+</div>

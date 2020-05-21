@@ -1,0 +1,85 @@
+#right{
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+#layout{
+    border: 8px solid #EEEEEE;
+    background-color: white;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+/*userinfor is class to show user login, admin and logout information */
+.userinfor{
+    text-align: right;
+    font-size: 25px;
+    color: #3355FF;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*add new is a class to define the add app back to panel*/
+.addNew{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+/*container is used as a class to display apps in flex manner*/
+.container {
+    display: flex ;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*list is the class to define each app as a list, can be added or removed*/
+.list {
+    width:25%;
+    margin-top: 50px;
+}
+/*remove is used to remove one app*/
+#remove {
+    padding-top: 25px;
+    font-size: 25px;
+    color: red;
+}
+.desc{
+    padding-top: 25px;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+}
+.title{
+    padding-top: 25px;
+    font-size: 30px;
+    color: red;
+    margin-bottom: 15px;
+}
+/*remove is used to remove one app*/
+#first {
+    padding-top: 25px;
+    font-size: 25px;
+    color: red;
+}
+
+/*style for the save button*/
+#save_sub {
+    margin-top: 35px;
+    font-size: 30px;
+    background-color: limegreen;
+    color:white;
+    border: 1px black;
+}
+.currentUser{
+    font-size: 25px;
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+#login{ font-size: 30px; margin-top: 20px; color: navy; }

@@ -1,0 +1,17 @@
+<!--this is the method when user select or unselect certain app-->
+<!--change the status from true to false, or false to true automatically as server response-->
+<%= stylesheet_link_tag 'addback' %>
+<!--add text to remind user and automatically finish set up in our designed form;
+However, User can still choose no change and go back, then form will not be submited
+ in this case status will be the same as before-->
+
+<div class="option">
+    <h2>Click Confirm To Add <%= @app.name %> To Panel </h2>
+    <% @app.status = true %>
+    <% @app.save %>
+</div>
+
+<div class="sub">
+  <%= link_to 'Confirm', '/apps' %>
+</div>
+

@@ -1,0 +1,64 @@
+
+<!--show header and footer-->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>GLBRC</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<style>
+     /*set up the logo, which will be shown in all pages*/
+    .header #logo1{
+    margin-left: 20px;
+	  float: left;
+    width: 100px;
+    height: 100px;
+    }
+    /*set up the title, which will be shown in all pages*/
+    .header h1{
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 45px;
+    font-size: 55px;
+    color: #3393FF;
+    letter-spacing: 0;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888,0px 3px 0px #777,0px 4px 0px #666,0px 5px 0px #555,0px 6px 0px #666,0px 7px 0px #333,0px 8px 7px #001135;
+    }
+    /*this is for footer css style*/
+    .info{
+      margin-top:50px;
+      margin-bottom:50px;
+    }
+    #copyright{
+    font-size: 20px;
+    text-align:center;
+    }
+
+    #email{
+    font-size: 15px;
+	  text-align:center;
+    }
+</style>
+</head>
+
+  <body>
+<!--  set up header logo and title-->
+  <div class="header">
+    <img src= "/images/glbrc.jpg" id="logo1" alt="logo1"/> <!-- images are in public folder-->
+    &nbsp
+    <h1> GLBRC Administration System </h1>
+  </div> <!--end for header-->
+
+    <div>
+    <%= yield %>
+    </div>
+
+   <div class="info" id="copyright"> Copyright &#169 John Li, 2020 </div>
+   <div class="info" id="email"> Contact: zli769&#64wisc.edu </div>
+</body>
+</html>

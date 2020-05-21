@@ -1,0 +1,49 @@
+
+<!--This is used to show users information
+and this is the first page of user-->
+<%= stylesheet_link_tag 'userindex' %>
+
+<!--this page, like other pages, needs user login to view-->
+<p id="notice"><%= notice %></p>
+<br>
+<br>
+<br>
+<div class="infor" align="center">
+Current User Information
+</div>
+
+<body>
+<table BORDER="5" WIDTH=50% CELLPADDING="4" CELLSPACING="3" align="center">
+  <tr>
+      <th >login</th>
+      <th >password</th>
+  </tr>
+  <tr>
+    <td align="center"><%= @user.login %></td>
+    <td align="center"><%= @user.password %></td>
+  </tr>
+</table>
+<br>
+<br>
+<div class="infor" align="center">
+Current User Apps Information
+</div>
+<table BORDER="5" WIDTH=50% CELLPADDING="4" CELLSPACING="3" align="center">
+  <tr>
+    <th >App Name</th>
+    <th >Priority</th>
+  </tr>
+  <% @apps.each do |app| %>
+    <% if app.status == true %>
+      <tr>
+        <td align="center"><%= app.name %></td>
+        <td align="center"><%= app.order %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+</body>
+<div class="back">
+<%= link_to 'Back to Home Page', '/apps' %>
+</div>
+

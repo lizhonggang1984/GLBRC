@@ -1,0 +1,53 @@
+/*this is the layout to display all apps unselected by current user*/
+.rg_layout{
+    border: 8px solid #EEEEEE;
+    background-color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/*define the style for userinformation, login, administration and logout*/
+.userinfor{
+    text-align: right;
+    font-size: 18px;
+    color: blue;
+}
+/*to define the situation when there is no unselected apps */
+.empty{
+    text-align: center;
+    font-size: 35px;
+    color: blue;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+/*define the div which user can create their own app besides the ones are given*/
+.createOwn{
+    text-align: center;
+    font-size: 25px;
+    color: green;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.link-to-text-color{
+    text-align: center;
+    font-size: 25px;
+    color: red;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+/*this is the css style to define add app back link*/
+#addback{
+    text-align: center;
+    font-size: 30px;
+    color: blue;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+/*define the style of go back to homepage*/
+#backhome{
+    text-align: center;
+    font-size: 20px;
+    color: red;
+}

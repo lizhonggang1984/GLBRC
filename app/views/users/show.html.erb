@@ -1,0 +1,9 @@
+
+<!--show information for selected user-->
+<h1> User Info</h1>
+<br>
+Login: <%= @user.login %>
+
+<br>
+<!--logout of system-->
+<%= link_to "log out", logout_path, method: "delete" %>

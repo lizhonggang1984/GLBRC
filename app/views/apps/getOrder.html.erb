@@ -1,0 +1,33 @@
+
+<!--add text to remind user and automatically finish set up in our designed form;
+However, User can still choose no change and go back, then form will not be submited
+ in this case status will be the same as before-->
+<%= stylesheet_link_tag 'getorder' %>
+<div class="option">
+
+  <% if @l1.to_i != 100 %>
+    <%@app1.order = @l1.to_i %>
+    <% @app1.save %>
+  <% end %>
+  <% if @l2.to_i != 100 %>
+    <%@app2.order = @l2.to_i %>
+    <% @app2.save %>
+  <% end %>
+  <% if @l3.to_i != 100 %>
+    <%@app3.order = @l3.to_i %>
+    <% @app3.save %>
+  <% end %>
+  <% if @l4.to_i != 100 %>
+    <%@app4.order = @l4.to_i %>
+    <% @app4.save %>
+  <% end %>
+  <% if @l5.to_i != 100 %>
+    <%@app5.order = @l5.to_i %>
+    <% @app5.save %>
+  <% end %>
+</div>
+
+<div class="userout"> <%= link_to "Save and Log out", logout_path, method: "delete" %> </div>
+
+
+

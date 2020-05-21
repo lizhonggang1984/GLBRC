@@ -1,0 +1,19 @@
+table,tr,td{
+    width: 60%;
+    height: 50px;
+    margin-top: 40px;
+    font-size: 30px;
+    color: blue;
+}
+.back{
+    font-size:30px;
+    padding-top:20px;
+    margin-top:60px;
+}
+.infor{
+    margin-top:20px;
+    padding-top:20px;
+    font-size: 40px;
+    color:darkblue;
+    align-content: center;
+}

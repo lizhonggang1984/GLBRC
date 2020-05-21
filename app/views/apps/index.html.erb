@@ -1,0 +1,86 @@
+
+<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jqueryui/style.css">
+<%= javascript_include_tag 'movemodule' %>
+
+<%= stylesheet_link_tag 'app_index' %>
+
+<div class="currentUser"> Current User <div id="login"> <%= @user.login %> </div></div>
+<!--rg_right is used to display login and login information-->
+<div id="right">
+  <p id="notice"><%= notice %></p>
+  <div class="userinfor" > <%= link_to 'User Information', '/users' %> </div>
+  <div class="userinfor"> <%= link_to "Log out", logout_path, method: "delete" %> </div>
+</div> <!--   end of the rg_right-->
+
+<!--rg_right is used to display tiles in panel-->
+<div id="layout">
+  <!--  start a panel to show google, wei and other apps-->
+  <div class="container">
+    <% @apps.each do |app| %>
+<!--      if not specify the image src, one line will do all apps, however, we need to repeat five times-->
+<!--      to specify the image we want to include. the other infor are obtained in the same way.-->
+      <% if app.name == 'Google' %>
+        <div class="list" draggable="true" id="draggable1">
+          <div class="title"><%= app.name.to_s %> </div>
+          <div class="desc"><%= app.description.to_s %> </div>
+          <div class="img-div"><%= link_to (image_tag("/images/google2.png")), app.link %></div>
+          <!--            'remove' is a hyerlink to remove current app-->
+          <div id="remove"> <%= link_to 'Remove ' + app.name.to_s, remove_path(app) %> </div>
+<!--          first is used to pull the selected app to top-->
+          <div id="first"> <%= link_to 'First ' + app.name.to_s, first_path(app) %> </div>
+        </div>
+
+      <% elsif app.name == 'Wisc' %>
+        <div class="list" draggable="true" id="draggable2">
+          <div class="title"><%= app.name.to_s %> </div>
+          <div class="desc"><%= app.description.to_s %> </div>
+          <div class="img-div"> <%= link_to (image_tag("/images/uw2.jpg")), app.link %> </div>
+          <div id="remove">	<%= link_to 'Remove ' + app.name.to_s, remove_path(app) %>	</div>
+          <div id="first"> <%= link_to 'First ' + app.name.to_s, first_path(app) %> </div>
+        </div>
+
+      <% elsif app.name == 'GLBRC' %>
+        <div class="list" draggable="true" id="draggable3">
+          <div class="title"><%= app.name.to_s %> </div>
+          <div class="desc"><%= app.description.to_s %> </div>
+          <div class="img-div"> <%= link_to (image_tag("/images/glbrc2.jpg")), app.link %> </div>
+          <div id="remove">	<%= link_to 'Remove ' + app.name.to_s, remove_path(app) %>	</div>
+          <div id="first"> <%= link_to 'First ' + app.name.to_s, first_path(app) %> </div>
+        </div>
+
+      <% elsif app.name == 'WEI' %>
+        <div class="list" draggable="true" id="draggable4">
+          <div class="title"><%= app.name.to_s %> </div>
+          <div class="desc"><%= app.description.to_s %> </div>
+          <div class="img-div"> <%= link_to (image_tag("/images/WEI2.png")), app.link %> </div>
+          <div id="remove"> <%= link_to 'Remove ' + app.name.to_s, remove_path(app) %> </div>
+          <div id="first"> <%= link_to 'First ' + app.name.to_s, first_path(app) %> </div>
+        </div>
+
+      <% else %>
+        <div class="list" draggable="true" id="draggable5">
+          <div class="title"><%= app.name.to_s %> </div>
+          <div class="desc"><%= app.description.to_s %> </div>
+          <div class="img-div"> <%= link_to (image_tag("/images/twitter2.png")), app.link %> </div>
+          <div id="remove">	<%= link_to 'Remove ' + app.name.to_s, remove_path(app) %> </div>
+          <div id="first"> <%= link_to 'First ' + app.name.to_s, first_path(app) %> </div>
+        </div>
+<!--      if only using text, one line can finish above scripts-->
+      <% end %> <!--  end of if/else -->
+    <% end %>
+  </div>  <!--  end of container -->
+  <!--  generate a addnew to guild user to add apps back-->
+   <div class="addNew" id="draggable6">
+    <%= link_to (image_tag("/images/add.jpg")), '/apps/index_notSelect' %>
+    <div> <%= link_to 'Add Apps to Panel', '/apps/index_notSelect' %> </div>
+   </div>
+</div>  <!--   end of the rg_layout-->
+<!--a submit button to save current setting for current user-->
+<input type="submit" id="save_sub" value="Save Layout">
+<!--used to save current setting to model -->
+<%= javascript_include_tag 'savelayout' %>  <!--this script includes re-order all apps currently in panel-->
+
+

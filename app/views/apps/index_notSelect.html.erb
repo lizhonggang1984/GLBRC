@@ -1,0 +1,39 @@
+
+<!--this page is to display all apps that are not chosen by user-->
+<%= stylesheet_link_tag 'noSelect' %>>
+<div class = "rg_right">
+  <p id="notice"><%= notice %></p>
+  <div class="userinfor"> Current User: <%= @user.login%> </div>>
+  <div class="userinfor"> <%= link_to "logout", logout_path, method: "delete" %> </div>
+</div>  <!--this is the end of the user information div-->
+
+<!--this layout is used to display unselected apps and ask for putting back-->
+<div class="rg_layout">
+<!--display following text when no unselected-->
+    <% if @apps.empty? %>
+	    <div class="empty">	No Available App For Current User </div>
+<!--display following text when is at least one unselected app-->
+
+    <% else %>
+      <% @apps.each do |app| %>
+        <% if app.name == 'Google' %>
+          <%= link_to (image_tag("/images/google2.png")), app.link %>
+        <% elsif app.name == 'Wisc' %>
+          <%= link_to (image_tag("/images/uw2.jpg")), app.link %>
+        <% elsif app.name == 'GLBRC' %>
+          <%= link_to (image_tag("/images/glbrc2.jpg")), app.link %>
+        <% elsif app.name == 'WEI' %>
+          <%= link_to (image_tag("/images/WEI2.png")), app.link %>
+        <% else %>
+          <%= link_to (image_tag("/images/twitter2.png")), app.link %>
+        <% end %>
+<!--        including add back text and link to add current app back to panel-->
+	      <div id="addback"> <%= link_to 'Add ' + app.name.to_s + " Back to Panel", addback_path(app) %>	</div>
+      <% end %>  <!--end for iteration-->
+    <% end %> <!--end for if/else-->
+<!--give user option to create their own app by create table-->
+<div class="createOwn"> <%= link_to 'Create Your Designed App', '/apps/new' %> </div>
+<!--used to go back to homepage if user doesn't want to do action-->
+<div id="backhome"> <%= link_to 'Back to Home Page', '/apps/index', class: 'link-to-text-color' %></div>
+</div><!--end of layout-->
+

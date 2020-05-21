@@ -1,0 +1,131 @@
+
+<!--This is just for test-->
+
+<hr color="blue">
+
+<div id="third">third</div>
+<br>
+<div id="first">first</div>
+<br>
+<div id="fourth">fourth</div>
+<br>
+<div id="second">second</div>
+<br>
+
+<input type="submit" id="save_sub" value="save your layout">
+<!--<input type="submit" id="btn_sub2" value="ajax">-->
+<p id = "doc"> herehehhheehe </p>
+
+<script>
+    window.onload = function(){
+        var rect1 = null;
+        var rect2 = null;
+        var rect3 = null;
+        var rect4 = null;
+        var rect5 = null;
+
+        if (document.getElementById("draggable1") != null){
+            rect1 = document.getElementById("draggable1").getBoundingClientRect();
+        }
+        if (document.getElementById("draggable2") != null){
+            rect2 = document.getElementById("draggable2").getBoundingClientRect();
+        }
+
+        if (document.getElementById("draggable3") != null){
+            rect3 = document.getElementById("draggable3").getBoundingClientRect();
+        }
+        if (document.getElementById("draggable4") != null){
+            rect4 = document.getElementById("draggable4").getBoundingClientRect();
+        }
+        if (document.getElementById("draggable5") != null){
+            rect5 = document.getElementById("draggable5").getBoundingClientRect();
+        }
+
+        //
+        document.getElementById("save_sub").onclick = function(){
+            var array = [];
+            /* Send the data using post and put the results in a div */
+            // $.ajax({
+            //     url: "getOrder?name="+22,
+            //     type: "get",
+            //     data: values,
+            //     success: function(){
+            //         window.alert('Saved Successfully');
+            //     },
+            //     error:function(){
+            //         window.alert('Error');
+            //     }
+            // });
+            if (rect1 != null){
+                var left = parseInt (rect1.left) * 5;
+                var top = parseInt (rect1.top);
+                var location1 =  left + top;
+                // window.alert("1: " + location1);
+                array.push(location1);
+            }
+            if (rect2 != null){
+                var left = parseInt (rect2.left);
+                var top = parseInt (rect2.top) * 10;
+                var location2 =  left + top;
+                // window.alert("2: " + location2);
+                array.push(location2);
+            }
+            if (rect3 != null){
+                var left = parseInt (rect3.left);
+                var top = parseInt (rect3.top) * 10;
+                var location3 = left + top;
+                // window.alert("3: " + location3);
+                array.push(location3);
+            }
+            if (rect4 != null){
+                var left = parseInt (rect4.left);
+                var top = parseInt (rect4.top) * 10;
+                var location4 =  left + top;
+                // window.alert("4: " + location4);
+                array.push(location4);
+            }
+            if (rect3 != null){
+                var left = parseInt (rect5.left);
+                var top = parseInt (rect5.top) * 10;
+                var location5 =  left + top;
+                // window.alert("4: " + location4);
+                array.push(location5);
+            }
+            array.sort();
+            var count = 5;
+            var l1 = 100;
+            var l2 = 100;
+            var l3 = 100;
+            var l4 = 100;
+            var l5 = 100;
+
+            while(array.length > 0 ){
+                var out = array.pop();
+                window.alert("out from array: " + out);
+                count --;
+                if (out == location1){
+                    l1 = count;
+                    window.alert("location1 is " + count);
+                }
+                else if (out == location2){
+                    l2 = count;
+                    window.alert("location2 is " + count);
+                }
+                else if (out == location3){
+                    l3 = count;
+                    window.alert("location3 is " + count);
+                }
+                else if (out == location4){
+                    l4 = count;
+                    window.alert("location3 is " + count);
+                }
+                else{
+                    l5 = count;
+                    window.alert("location5 is " + count);
+                }
+            }
+            window.open("/apps/getOrder?l1=" + l1 + "&" + "l2=" + l2 + "&" + "l3=" + l3 + "&" + "l4=" + l4 +
+            "&" + "l5=" + l5, "_self")
+        }
+    }
+</script>

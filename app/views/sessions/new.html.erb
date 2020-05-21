@@ -1,0 +1,28 @@
+<!--this is used to for user to login, start a new session-->
+<%= stylesheet_link_tag 'sessionnew' %>
+
+<div class="rg_layout">
+  <div class="rg_center">
+	<br>
+<%= form_for(:session, url: login_path) do |form| %>
+
+    <%= form.label :login,:id => 'text_area' %>
+    <%= form.text_field :login,:id=>'login' %>
+    <br>
+    <br>
+    <%= form.label :password,:id => 'text_area' %>
+    <%= form.text_field :password,:id=>'password' %>
+    <br>
+    <br>
+    <%= form.submit "Login", :id=>'btn_sub'%>
+<% end %>
+    <div class="rg_right">
+        <p>Sign up now?  <%= link_to "Sign Up", '/users/new' %></p>
+    </div>
+
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.rg_layout{
+    border: 8px solid #EEEEEE;
+    background-color: white;
+}
+
+.rg_center{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.rg_right{
+    float: right;
+    margin: 15px;
+}
+
+.rg_right > p:first-child{
+    font-size: 20px;
+
+}
+.rg_right p a {
+    color:red;
+}
+
+#login,#password{
+    width: 250px;
+    height: 30px;
+    border: 1px solid darkblue ;
+    border-radius: 5px;
+    padding-top: 5px;
+    margin-top: 10px;
+}
+
+#btn_sub{
+    width: 180px;
+    height: 50px;
+    font-size : 20px;
+    background-color: lightblue;
+    border: 1px solid darkblue ;
+    margin-top: 15px;
+}
+
+#text_area{
+    color: blue;
+    font-size: 25px;
+}

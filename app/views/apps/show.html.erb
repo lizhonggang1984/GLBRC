@@ -1,0 +1,46 @@
+<!--Show app information for certain id-->
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @app.name %>, is created by <%= @app.user.login %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @app.description %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @app.color %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @app.status %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @app.link %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @app.user_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @app.order %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @app.priority %>
+</p>
+
+<!--use edit or back to home page by link-->
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>
