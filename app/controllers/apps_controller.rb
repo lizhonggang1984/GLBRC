@@ -48,13 +48,13 @@ class AppsController < ApplicationController
 
   # admin can find all apps and edit them in back-end as administrator
   def admin
-    # @sessionid = session[:user_id]
-    # if @sessionid == nil
-    #   redirect_to root_url # go to login page if not logged in
-    # else 
-    # @user = User.find(@sessionid)    
-    # @apps = App.all
-    #end  
+    @sessionid = session[:user_id]
+    if @sessionid == nil
+       redirect_to root_url # go to login page if not logged in
+    else 
+    @user = User.find(@sessionid)    
+    @apps = App.all
+    end  
   end
 
   # GET /apps/1
