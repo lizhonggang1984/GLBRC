@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  get '/newuser', to: 'users#new'
+
   get '/apps/remove/:id', to: 'apps#remove', as: 'remove'
   get '/apps/first/:id', to: 'apps#first', as: 'first'
   get '/apps/addback/:id', to: 'apps#addback', as: 'addback'
-  # get '/getOrder/:id', to: redirect('/apps')
 
   resources :apps do
     collection do
