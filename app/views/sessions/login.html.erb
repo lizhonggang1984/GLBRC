@@ -1,0 +1,33 @@
+<div class="login-form-container clearfix">
+  <div class="login-form">
+    <%= form_tag "/create_login" do %>
+      <dl class="form">
+        <dt>
+          <%= label_tag "login" %>
+        </dt>
+        <dd>
+          <%= text_field_tag :login, params[:login] %>
+        </dd>
+      </dl>
+      <br>
+      <br>
+      <dl class="form">
+        <dt>
+          <%= label_tag "Password" %>
+        </dt>
+        <dd>
+          <%= password_field_tag :password, params[:password] %>
+        </dd>
+      </dl>
+      <br>
+      <p><%= submit_tag "Login", :class => "login-button btn btn-primary" %></p>
+      <p></p>
+      <br>
+      <br>
+
+      <div class="need-signup" font-size="18">
+        <%= link_to "Sign up today！", "/signup" %>
+      </div>
+    <% end %>
+  </div>
+</div>

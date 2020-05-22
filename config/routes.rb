@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
 
-  get '/newuser', to: 'users#new'
+  get 'login' => 'sessions#login'
+  post 'create_login' => 'sessions#create_login'
+  get 'signup' => 'sessions#signup'
+  post 'create_user' => 'sessions#create_user'
+  get 'logout' => 'sessions#logout'
+
+  get 'firstpage' => 'apps#index'
 
   get '/apps/remove/:id', to: 'apps#remove', as: 'remove'
   get '/apps/first/:id', to: 'apps#first', as: 'first'
@@ -27,5 +30,5 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'apps#new'
+  root 'sessions#login'
 end

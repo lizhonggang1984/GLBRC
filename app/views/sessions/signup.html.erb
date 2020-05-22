@@ -1,0 +1,20 @@
+<div class="signup-form-container clearfix">
+  <div class="signup-form">
+    <%= form_for @user,url:"/create_user" do |f| %>
+      <dl class="form">
+        <dt><%= f.label :login, "login" %></dt>
+        <dd><%= f.text_field :login %></dd>
+      </dl>
+      <dl class="form">
+        <dt><%= f.label :password, "password" %></dt>
+        <dd><%= f.password_field :password %></dd>
+      </dl>
+      <dl class="form">
+        <dt><%= f.label :password_confirmation, "confirm password" %></dt>
+        <dd><%= f.password_field :password_confirmation %></dd>
+      </dl>
+      <p><%= f.submit "register", :class => "signup-button btn btn-primary" %></p>
+    <% end %>
+  </div>
+</div>
+
